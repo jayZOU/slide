@@ -1,0 +1,325 @@
+/* ============================================================
+   样式重置
+   ============================================================ */
+body,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+input,
+select,
+textarea,
+button,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+ul,
+dl,
+ol {
+  list-style: none;
+}
+img,
+fieldset,
+input[type="submit"] {
+  border: 0 none;
+}
+img {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+em {
+  font-style: normal;
+}
+strong {
+  font-weight: normal;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button,
+input[type="button"] {
+  cursor: pointer;
+  border: 0 none;
+}
+textarea {
+  word-wrap: break-word;
+  resize: none;
+}
+/* word-wrap for opera, resize for webkit */
+menu {
+  margin: 0;
+  padding: 0;
+}
+body {
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: 100%!important;
+  font-family: Helvetica;
+}
+input[type="number"] {
+  -webkit-user-select: text;
+}
+a,
+button,
+input,
+img {
+  -webkit-touch-callout: none;
+}
+/* 1.ios 长按时不触发系统的菜单 2.禁止长按时下载图片 */
+input,
+select,
+textarea {
+  outline: none;
+}
+/* 去除android4.0以下 a/button/input标签被点击时产生的边框 因为边框引起了不少bug */
+a,
+button,
+input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* Android4.0下不识别选择器-webkit-transform-3d 使用它可做Android4.0下版本兼容 */
+@media all and (-webkit-transform-3d) {
+  /* android4.0+ ios4+ 恢复按钮被点击时产生的效果 */
+  a,
+  button,
+  input {
+    -webkit-tap-highlight-color: rgba(130, 130, 130, 0.52);
+  }
+}
+html,
+body {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+/* ============================================================
+   内容
+   ============================================================ */
+body {
+  background: url("../images/bg.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+/*衣服页面*/
+.wrap {
+  text-align: center;
+}
+.screen {
+  position: relative;
+}
+.page1-txt {
+  display: inline-block;
+  width: 14.5rem;
+  height: 3.46875rem;
+  margin-top: 1.875rem;
+  background: url("../images/sprite/text/page1_txt.png") no-repeat;
+  background-size: 100% 100%;
+}
+.page2-txt {
+  display: inline-block;
+  width: 16.09375rem;
+  height: 3.53125rem;
+  margin-top: 1.875rem;
+  background: url("../images/sprite/text/page2_txt.png") no-repeat;
+  background-size: 100% 100%;
+}
+.page3-txt {
+  display: inline-block;
+  width: 14.28125rem;
+  height: 3.53125rem;
+  margin-top: 1.875rem;
+  background: url("../images/sprite/text/page3_txt.png") no-repeat;
+  background-size: 100% 100%;
+}
+.phone {
+  width: 8.125rem;
+  height: 5.78125rem;
+  border-bottom: 1px solid #7fe37f;
+  box-shadow: 0 0.03125rem #00c800;
+  text-align: center;
+  margin: 1.4375rem auto 0;
+}
+.phone .page1 {
+  background: url("../images/sprite/page1_phone.png") no-repeat;
+  background-size: 100% 100%;
+}
+.phone .page2 {
+  background: url("../images/sprite/page2_phone.png") no-repeat;
+  background-size: 100% 100%;
+}
+.phone .page3 {
+  background: url("../images/sprite/page2_phone.png") no-repeat;
+  background-size: 100% 100%;
+}
+.phone-img {
+  display: inline-block;
+  width: 6.90625rem;
+  height: 5.75rem;
+}
+.cloth {
+  height: 55%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.people {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.hand {
+  display: inline-block;
+}
+.page1-cloth .people {
+  background: url("../images/page1.png") no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+}
+.page1-cloth .hand {
+  width: 3.21875rem;
+  height: 3.90625rem;
+  background: url("../images/sprite/page1_hand.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 1.25rem;
+  left: 2%;
+}
+.page2-cloth .people {
+  background: url("../images/page2.png") no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+}
+.page2-cloth .hand {
+  width: 2.25rem;
+  height: 3.28125rem;
+  background: url("../images/sprite/page2_hand.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 2.3rem;
+  left: 10.5%;
+}
+.page3-cloth .people {
+  background: url("../images/page3.png") no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+}
+.page3-cloth .hand {
+  width: 3.375rem;
+  height: 3.59375rem;
+  background: url("../images/sprite/page3_hand.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 3.6rem;
+  left: 1.5%;
+}
+.page3-cloth .hand2 {
+  display: inline-block;
+  width: 3.375rem;
+  height: 3.15625rem;
+  background: url("../images/sprite/page3_hand2.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 6.5rem;
+  right: 4%;
+}
+/*领券页面*/
+.page4-txt {
+  display: inline-block;
+  width: 12.25rem;
+  height: 3.4375rem;
+  margin-top: 2.5625rem;
+  background: url("../images/sprite/text/page4_txt1.png") no-repeat;
+  background-size: 100% 100%;
+}
+.page4-title {
+  display: inline-block;
+  width: 9.09375rem;
+  height: 3.59375rem;
+  margin-top: 3.0625rem;
+  background: url("../images/sprite/page4-title.png") no-repeat;
+  background-size: 100% 100%;
+}
+.page4-logo {
+  display: inline-block;
+  width: 6.125rem;
+  height: 3.46875rem;
+  margin: 2.5625rem 5rem 0;
+  background: url("../images/sprite/logo.png") no-repeat;
+  background-size: 100%;
+}
+.voucher {
+  display: inline-block;
+  width: 14.90625rem;
+  height: 5.15625rem;
+  margin-top: 3.0625rem;
+  background: url("../images/sprite/voucher.png") no-repeat;
+  background-size: 100% 100%;
+}
+/* 媒体查询 */
+@media screen and (min-height: 441px) and (max-height: 481px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (min-height: 481px) and (max-height: 568px) and (min-width: 360px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-height: 569px) and (max-height: 667px) {
+  html {
+    font-size: 19px;
+  }
+}
+@media screen and (min-height: 668px) and (max-height: 765px) {
+  html {
+    font-size: 21px;
+  }
+}
+@media screen and (min-height: 766px) {
+  html {
+    font-size: 30px;
+  }
+}

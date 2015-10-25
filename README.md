@@ -1,0 +1,2 @@
+# slide
+a slide component

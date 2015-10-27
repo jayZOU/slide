@@ -16,12 +16,13 @@
     /**
 	*	slide 滑屏组件
 	*	@author jayzou
-	*	@time 2015-10-25
-	*	@version 0.0.1
+	*	@time 2015-10-27
+	*	@version 0.0.2
 	*	@class Slide
 	*	@param String	wrap		            必填	传入滑动容器ID
 	*   @param String   currentClass            选填  滑动时切换动画class，默认current
 	*	@param boolean	startLocalstorage		选填	记录当前浏览页面
+	*	@param int	    distance        		选填	产生滑动需要的距离，默认20，单位px
 	*	@param {Object}	onChange		        选填	切换完成回调
 	*	@param {Object}	onDownChange		    选填	下滑完成时回调
 	*	@param {Object}	onUpChange		        选填	上滑完成时回调
@@ -32,13 +33,14 @@
 		wrap: 'wrap',					//必填，传入滑动容器ID
 		currentClass: 'current',		//选填，滑动时切换动画class
 		startLocalstorage: false,		//选填，是否开启localstorage记录页面返回后是否回到上次访问的页面，默认false
+		distance: 20,					//选填，产生滑动需要的距离，默认20，单位px
 		onChange: function(){			//选填，每屏切换完成时的回调
 			console.log("onchange");
 		},
 		onDownChange: function(){		//选填，下滑完成时回调
 			console.log("onDownChange");
 		},
-		onUpChange: function(){		//选填，上滑完成时回调
+		onUpChange: function(){		    //选填，上滑完成时回调
 			console.log("onUpChange");
 		},
 		defaultClass: {					//选填，滑动过程动画效果

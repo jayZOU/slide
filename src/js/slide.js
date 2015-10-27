@@ -8,6 +8,7 @@ var Slide = function(opts) {
 		onChange = opts.onChange || function(){},					//每屏切换完成时的回调
 		onDownChange = opts.onDownChange || function(){},			//下滑完成时回调
 		onUpChange = opts.onUpChange || function(){},				//上滑完成时回调
+		distance = opts.distance || 20,								//产生滑动需要的距离
 		defaultClass = opts.defaultClass || {						//页面切换过场动画
 			'transition': '-webkit-transform 0.5s ease',
 			'transform': 'translate(0px, 0px)'
@@ -104,10 +105,10 @@ var Slide = function(opts) {
 		e.preventDefault();
 		_y = e.changedTouches[0].pageY;
 		var disY = _y - y;
-		if(disY < 0){
+		if(disY < -distance){
 			next();
 
-		}else if(disY > 0){
+		}else if(disY > distance){
 			prev();
 		}
 	};
@@ -123,8 +124,8 @@ var Slide = function(opts) {
 			addClass(notes[currentPage], currentClass);
 
 			//执行回调
-			onChange();
-			onDownChange();
+			onChange(currentPage);
+			onDownChange(currentPage);
 		}
 
 	};
@@ -138,8 +139,8 @@ var Slide = function(opts) {
 			addClass(notes[currentPage], currentClass);
 
 			//执行回调
-			onChange();
-			onUpChange();
+			onChange(currentPage);
+			onUpChange(currentPage);
 		}
 	};
 
@@ -149,7 +150,7 @@ var Slide = function(opts) {
 		currentPage = page - 1;
 
 		//执行回调
-		onChange();
+		onChange(currentPage);
 	};
 
 	//获取为第几屏

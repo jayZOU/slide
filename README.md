@@ -55,14 +55,14 @@
 		currentClass: 'current',		//选填，滑动时切换动画class
 		startLocalstorage: false,		//选填，是否开启localstorage记录页面返回后是否回到上次访问的页面，默认false
 		distance: 20,					//选填，产生滑动需要的距离，默认20，单位px
-		onChange: function(){			//选填，每屏切换完成时的回调
-			console.log("onchange");
+		onChange: function(page){			//选填，每屏切换完成时的回调
+			console.log(page);
 		},
-		onDownChange: function(){		//选填，下滑完成时回调
-			console.log("onDownChange");
+		onDownChange: function(page){		//选填，下滑完成时回调
+			console.log(page);
 		},
-		onUpChange: function(){		    //选填，上滑完成时回调
-			console.log("onUpChange");
+		onUpChange: function(page){		    //选填，上滑完成时回调
+			console.log(page);
 		},
 		defaultClass: {					//选填，滑动过程动画效果
 			'webkitTransition': '-webkit-transform 0.5s ease',	//需要加前缀

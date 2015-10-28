@@ -12,12 +12,33 @@
     
 访问[http://localhost:8080/][1]
 ##Examples
+```html
+<div class="wrap" id="wrap">
+    <section class="screen screen1">
+        <div class="screen-arrow"></div>
+    </section>
+    <section class="screen screen2">
+        <div class="screen-arrow"></div>
+    </section>
+    <section class="screen screen3">
+        <div class="screen-arrow"></div>
+    </section>
+    <section class="screen screen4">
+        <div class="screen-arrow"></div>
+    </section>
+    <section class="screen screen5">
+        <div class="screen-arrow"></div>
+    </section>
+</div>
+```
+
+
 ```js
     /**
 	*	slide 滑屏组件
 	*	@author jayzou
-	*	@time 2015-10-27
-	*	@version 0.0.2
+	*	@time 2015-10-25
+	*	@version 0.0.1
 	*	@class Slide
 	*	@param String	wrap		            必填	传入滑动容器ID
 	*   @param String   currentClass            选填  滑动时切换动画class，默认current

@@ -37,8 +37,8 @@
     /**
 	*	slide 滑屏组件
 	*	@author jayzou
-	*	@time 2015-10-25
-	*	@version 0.0.1
+	*	@time 2015-11-5
+	*	@version 0.0.2
 	*	@class Slide
 	*	@param String	wrap		            必填	传入滑动容器ID
 	*   @param String   currentClass            选填  滑动时切换动画class，默认current

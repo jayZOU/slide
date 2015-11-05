@@ -7,121 +7,41 @@
 	<meta content="black" name="apple-mobile-web-app-status-bar-style">
 	<meta content="telephone=no" name="format-detection">
 	<meta content="email=no" name="format-detection">
-	<title>优衣库</title>
-	<style>
-		/*loading*/
-		.show-loading .loading{display:block;text-align:center;}
-		.show-loading .wrap{display:none;}
-		.loading{display: none;margin-top: 358px;}
-		.loading-txt{display: inline-block;background: url("data:image/png;base64,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") no-repeat;background-size:100% 100%;width:216px;height: 39px;}
-		.load-point{overflow: hidden;margin-top: 34px;}
-		.points{display: inline-block;width:12px;height:12px;border-radius:100%;margin:0 7px;}
-		.points:nth-child(1){background:#86898c;-webkit-animation:anm-point 0.8s step-start infinite alternate;animation:anm-point 0.8s step-start infinite alternate;}
-		.points:nth-child(2){background:#b0afaf;-webkit-animation:anm-point 0.8s step-start 0.2s infinite alternate;animation:anm-point 0.8s step-start 0.2s infinite alternate;}
-		.points:nth-child(3){background: #adacac;-webkit-animation:anm-point 0.8s step-start 0.4s infinite alternate;animation:anm-point 0.8s step-start 0.4s infinite alternate;}
-		.points:nth-child(4){background: #c3c2c2;-webkit-animation:anm-point 0.8s step-start 0.6s infinite alternate;animation:anm-point 0.8s step-start 0.6s infinite alternate;}
-		.points:nth-child(5){background: #86898c;-webkit-animation:anm-point 0.8s step-start 0.8s infinite alternate;animation:anm-point 0.8s step-start 0.8s infinite alternate;}
-		@keyframes anm-point{
-			0%{
-				background: #86898c;
-			}
-			33%{
-				background: #b0afaf;
-			}
-			67%{
-				background: #adacac;
-			}
-			100%{
-				background: #c3c2c2;
-			}
-		}
-		@-webkit-keyframes anm-point{
-			0%{
-				background: #86898c;
-			}
-			33%{
-				background: #b0afaf;
-			}
-			67%{
-				background: #adacac;
-			}
-			100%{
-				background: #c3c2c2;
-			}
-		}
-		/*loading*/
-	</style>
+	<title>demo</title>
 	<link rel="stylesheet" href="./src/style/index.css"/>
+	<style type="text/css">
+	.screen1{
+		background-color: #eee;
+	}
+	.screen2{
+		background-color: #ccc;
+	}
+	.screen3{
+		background-color: #aaa;
+	}
+	.screen4{
+		background-color: #bbb;
+	}
+	</style>
 </head>
 <body class=""><!--show-loading：显示loading-->
 <!-- 加载中[[ -->
-<div class="loading ">
-	<span class="loading-txt"></span>
-	<ul class="load-point">
-		<li class="points"></li>
-		<li class="points"></li>
-		<li class="points"></li>
-		<li class="points"></li>
-		<li class="points"></li>
-	</ul>
-</div>
+
 <!-- 加载中]] -->
 
 <!-- 滑屏内容[[ -->
 <div class="wrap" id="wrap">
 	<section class="screen screen1">
-		<div class="screen-arrow">
-			<span class="page1-txt"><!--文字--></span>
-
-			<div class="phone"><!--手机-->
-				<span class="phone-img page1"></span>
-			</div>
-
-			<div class="cloth page1-cloth"><!--底部衣服-->
-				<span class="people">
-					<span class="hand"></span>
-				</span>
-			</div>
-		</div>
+		1
 	</section>
 	<section class="screen screen2">
-		<div class="screen-arrow">
-			<span class="page2-txt"><!--文字--></span>
-
-			<div class="phone"><!--手机-->
-				<span class="phone-img page2"></span>
-			</div>
-
-			<div class="cloth page2-cloth"><!--底部衣服-->
-				<span class="people">
-					<span class="hand"></span>
-				</span>
-			</div>
-		</div>
+		2
 	</section>
 	<section class="screen screen3">
-		<div class="screen-arrow">
-			<span class="page3-txt"><!--文字--></span>
-
-			<div class="phone"><!--手机-->
-				<span class="phone-img page3"></span>
-			</div>
-
-			<div class="cloth page3-cloth"><!--底部衣服-->
-				<span class="people">
-					<span class="hand"></span>
-					<span class="hand2"></span>
-				</span>
-			</div>
-		</div>
+		3
 	</section>
 	<section class="screen screen4">
-		<div class="screen-arrow">
-			<span class="page4-txt"><!--文字--></span>
-			<span class="page4-title"><!--主题文字--></span>
-			<span class="page4-logo"><!--微信和优衣库logo--></span>
-			<a class="voucher" href="#"><!--领取代金券按钮--></a>
-		</div>
+		4
 	</section>
 </div>
 <!-- 滑屏内容]] -->

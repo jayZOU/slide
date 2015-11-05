@@ -9,9 +9,9 @@ var Slide = function(opts) {
 		onDownChange = opts.onDownChange || function(){},			//下滑完成时回调
 		onUpChange = opts.onUpChange || function(){},				//上滑完成时回调
 		distance = opts.distance || 20,								//产生滑动需要的距离
+		useAcc = opts.useAcc == null ? true : opts.useAcc,			//是否采用硬件加速
 		defaultClass = opts.defaultClass || {						//页面切换过场动画
-			'transition': '-webkit-transform 0.5s ease',
-			'transform': 'translate(0px, 0px)'
+			'transition': '-webkit-transform 0.5s ease'
 		},
 
 		//节点相关
@@ -114,9 +114,14 @@ var Slide = function(opts) {
 	};
 
 	var next = function() {
+		console.log(useAcc);
 		if (currentPage < pageHight.length - 1 && !isLock) {
 			// console.log(translateAll[currentPage + 1]);
-			wrap.style[cssPrefix] = "translate(0px, -" + translateAll[currentPage + 1] + "px)";
+			if(useAcc){
+				wrap.style[cssPrefix] = "translate3d(0px, -" + translateAll[currentPage + 1] + "px, 0px)";
+			}else{
+				wrap.style[cssPrefix] = "translate(0px, -" + translateAll[currentPage + 1] + "px)";
+			}
 			currentPage ++;
 			localStorage.page = currentPage + 1;
 
@@ -132,7 +137,11 @@ var Slide = function(opts) {
 
 	var prev = function() {
 		if (currentPage > 0 && !isLock) {
-			wrap.style[cssPrefix] = "translate(0px, -" + translateAll[currentPage - 1] + "px)";
+			if(useAcc){
+				wrap.style[cssPrefix] = "translate3d(0px, -" + translateAll[currentPage - 1] + "px, 0px)";
+			}else{
+				wrap.style[cssPrefix] = "translate(0px, -" + translateAll[currentPage - 1] + "px)";
+			}
 			currentPage --;
 			localStorage.page = currentPage + 1;
 			removeClass(notes[currentPage + 1], currentClass);
@@ -146,7 +155,11 @@ var Slide = function(opts) {
 
 	//直接跳转第n页
 	var playTo = function(page) {
-		wrap.style[cssPrefix] = "translate(0px, -" + translateAll[page - 1] + "px)";
+		if(useAcc){
+				wrap.style[cssPrefix] = "translate3d(0px, -" + translateAll[currentPage - 1] + "px, 0px)";
+			}else{
+				wrap.style[cssPrefix] = "translate(0px, -" + translateAll[currentPage - 1] + "px)";
+			}
 		currentPage = page - 1;
 
 		//执行回调

@@ -44,6 +44,7 @@
 	*   @param String   currentClass            选填  滑动时切换动画class，默认current
 	*	@param boolean	startLocalstorage		选填	记录当前浏览页面
 	*	@param int	    distance        		选填	产生滑动需要的距离，默认20，单位px
+	*	@param int		useAcc		        	选填	选填，是否采用硬件加速，默认true
 	*	@param {Object}	onChange		        选填	切换完成回调
 	*	@param {Object}	onDownChange		    选填	下滑完成时回调
 	*	@param {Object}	onUpChange		        选填	上滑完成时回调
@@ -55,6 +56,7 @@
 		currentClass: 'current',		//选填，滑动时切换动画class
 		startLocalstorage: false,		//选填，是否开启localstorage记录页面返回后是否回到上次访问的页面，默认false
 		distance: 20,					//选填，产生滑动需要的距离，默认20，单位px
+		useAcc: true,					//选填，是否采用硬件加速，默认true
 		onChange: function(page){			//选填，每屏切换完成时的回调
 			console.log(page);
 		},

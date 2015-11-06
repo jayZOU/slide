@@ -37,8 +37,8 @@
     /**
 	*	slide 滑屏组件
 	*	@author jayzou
-	*	@time 2015-11-5
-	*	@version 0.0.2
+	*	@time 2015-11-6
+	*	@version 0.0.3
 	*	@class Slide
 	*	@param String	wrap		            必填	传入滑动容器ID
 	*   @param String   currentClass            选填  滑动时切换动画class，默认current
@@ -76,7 +76,7 @@
 	// slide.prev();						//上一页
 	// slide.playTo(3);						//直接跳转第n页
 	// console.log(slide.getPage());		//获取为当前页数
-	// slide.lockPage();					//锁住屏幕，禁止滑动
+	// slide.lockPage();					//锁住屏幕，禁止滑动，可动调用next、prev、playTo
 	// slide.unLockPage();					//解锁屏幕，允许滑动
 
 	//辅助类

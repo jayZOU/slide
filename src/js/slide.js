@@ -105,17 +105,16 @@ var Slide = function(opts) {
 		e.preventDefault();
 		_y = e.changedTouches[0].pageY;
 		var disY = _y - y;
-		if(disY < -distance){
+		if(disY < -distance && !isLock){
 			next();
 
-		}else if(disY > distance){
+		}else if(disY > distance && !isLock){
 			prev();
 		}
 	};
 
 	var next = function() {
-		console.log(useAcc);
-		if (currentPage < pageHight.length - 1 && !isLock) {
+		if (currentPage < pageHight.length - 1) {
 			// console.log(translateAll[currentPage + 1]);
 			if(useAcc){
 				wrap.style[cssPrefix] = "translate3d(0px, -" + translateAll[currentPage + 1] + "px, 0px)";
@@ -136,7 +135,7 @@ var Slide = function(opts) {
 	};
 
 	var prev = function() {
-		if (currentPage > 0 && !isLock) {
+		if (currentPage > 0) {
 			if(useAcc){
 				wrap.style[cssPrefix] = "translate3d(0px, -" + translateAll[currentPage - 1] + "px, 0px)";
 			}else{
@@ -156,9 +155,13 @@ var Slide = function(opts) {
 	//直接跳转第n页
 	var playTo = function(page) {
 		if(useAcc){
-				wrap.style[cssPrefix] = "translate3d(0px, -" + translateAll[currentPage - 1] + "px, 0px)";
+				wrap.style[cssPrefix] = "translate3d(0px, -" + translateAll[page - 1] + "px, 0px)";
+				removeClass(notes[currentPage], currentClass);
+				addClass(notes[page - 1], currentClass);
 			}else{
-				wrap.style[cssPrefix] = "translate(0px, -" + translateAll[currentPage - 1] + "px)";
+				wrap.style[cssPrefix] = "translate(0px, -" + translateAll[page - 1] + "px)";
+				removeClass(notes[currentPage], currentClass);
+				addClass(notes[page - 1], currentClass);
 			}
 		currentPage = page - 1;
 

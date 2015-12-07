@@ -42,7 +42,7 @@ var Slide = function(opts) {
 	var _initData = function() {
 		//获取每屏的节点
 		notes = wrap.children;
-
+		
 		//获取每屏节点宽高
 		var allHeight = 0;
 		for (var i = 0, len = notes.length; i < len; i++) {
@@ -217,8 +217,10 @@ var Slide = function(opts) {
 
 	//删除class
 	var removeClass = function(targ, className) {
+		// alert(1);
+		console.log(targ.className.indexOf(className));
 		if (targ.className.indexOf(className) > -1) {
-			targ.className = targ.className.replace(" " + className, "");
+			targ.className = targ.className.indexOf(" ") ? targ.className.replace(className, "") : targ.className.replace(" " + className, "");
 		}
 	};
 
